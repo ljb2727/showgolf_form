@@ -3,7 +3,9 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Checkbox, Link } from "@mui/material";
 
-export default function CheckboxLabels({ link, label, required }) {
+import Modal from "../components/Modal";
+
+export default function CheckboxLabels({ link, label, required, modal }) {
   return (
     <FormGroup>
       <FormControlLabel
@@ -11,14 +13,24 @@ export default function CheckboxLabels({ link, label, required }) {
         label={
           <>
             {label}
-            <Link
-              onClick={(e) => {
-                e.preventDefault();
-                alert("link clicked!");
-              }}
-            >
-              {link.text}
-            </Link>
+            {Modal && (
+              <Modal
+                label={modal.label}
+                title={modal.title}
+                substance={modal.substance}
+              />
+            )}
+
+            {Link && (
+              <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert(link?.href);
+                }}
+              >
+                {link?.text}
+              </Link>
+            )}
           </>
         }
       />

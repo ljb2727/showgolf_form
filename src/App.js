@@ -6,15 +6,27 @@ import Flight from "./pages/flight";
 import Theme from "./Theme";
 import { Box } from "@mui/material";
 
+import Header from "./containers/Header";
+import Footer from "./containers/Footer";
+
 function App() {
   return (
     <Theme>
       <CssBaseline />
-      <Box sx={{ overflow: "hidden" }}>
+      <Box
+        sx={{
+          overflow: "hidden",
+          mx: "auto",
+
+          minHeight: "100vh",
+        }}
+      >
+        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/flight" element={<Flight />} />
         </Routes>
+        <Footer />
       </Box>
     </Theme>
   );
