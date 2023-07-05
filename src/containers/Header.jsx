@@ -5,12 +5,27 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 export default function ButtonAppBar() {
+  const pathName = window.location.pathname.substring(1);
+
+  const [title, setTitle] = React.useState("문의 등록");
+
+  React.useEffect(() => {
+    switch (pathName) {
+      case "flight":
+        setTitle("정품 등록");
+        break;
+
+      default:
+        break;
+    }
+  }, []);
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar position="static" elevation={0}>
         <Toolbar variant="dense" sx={{ justifyContent: "center" }}>
           <Typography variant="h6" component="div">
-            문의 등록
+            {title}
           </Typography>
         </Toolbar>
       </AppBar>

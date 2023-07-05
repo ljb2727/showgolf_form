@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
-    fontSize: 12.25, // 원하는 기본 폰트 크기로 변경합니다.
+    fontSize: 12.25,
   },
   overrides: {
     MuiInput: {
@@ -12,11 +12,21 @@ const theme = createTheme({
         "&::placeholder": {
           color: "red",
         },
-        color: "white", // if you also want to change the color of the input, this is the prop you'd use
+        color: "white",
       },
     },
   },
   components: {
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+        variant: "elevation",
+      },
+      styleOverrides: {
+        root: {},
+      },
+    },
+
     MuiButton: {
       defaultProps: {
         disableElevation: true,

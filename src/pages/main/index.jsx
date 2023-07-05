@@ -5,7 +5,6 @@ import TextField from "../../components/TextField";
 import CheckboxLabels from "../../components/CheckBox";
 import Button from "../../components/Button";
 import Grid from "@mui/material/Unstable_Grid2";
-
 const data1 = [
   { label: "쇼골프 프렌차이즈 가맹", id: "showgolf" },
   { label: "플라이트스코프 구매", id: "flight1" },
@@ -63,7 +62,7 @@ export default function Main() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ px: 1, pt: 1 }}>
+    <Container sx={{ p: { xs: 2 }, pt: 1 }}>
       <Box component="form" onSubmit={onSubmit}>
         <Grid container spacing={1}>
           <Grid xs={12}>
@@ -159,7 +158,12 @@ export default function Main() {
 			- 개인정보 이용 목적 달성 시 까지`,
               }}
               //link={{ text: "test", href: "/" }}
-              label="[필수] 쇼골프 관련 문의 상담을 위한 필수 개인정보 수집 및 활용에 동의합니다."
+              label={
+                <Box component={"span"} sx={{ letterSpacing: -0.8 }}>
+                  [필수] 쇼골프 관련 문의 상담을 위한 필수 개인정보 수집 및
+                  활용에 동의합니다.
+                </Box>
+              }
             />
           </Grid>
         </Grid>

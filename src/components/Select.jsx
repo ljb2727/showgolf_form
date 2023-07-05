@@ -18,6 +18,10 @@ export default function BasicSelect({
     changeSelect && changeSelect(event.target.value);
   };
 
+  const selectStyle = {
+    // 원하는 스타일 속성들을 추가로 정의합니다.
+  };
+
   return (
     <>
       <FormControl sx={{ minWidth: 60 }} fullWidth size="small">
@@ -35,7 +39,7 @@ export default function BasicSelect({
           }
         >
           {data.map((item, index) => (
-            <MenuItem key={item.id} value={item.id}>
+            <MenuItem key={item.id} value={item.id} style={selectStyle}>
               {item.label}
             </MenuItem>
           ))}
