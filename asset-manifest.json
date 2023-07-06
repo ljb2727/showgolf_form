@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/showgolf_form/static/css/main.41cb244d.css",
+    "main.js": "/showgolf_form/static/js/main.c687e45e.js",
+    "index.html": "/showgolf_form/index.html",
+    "main.41cb244d.css.map": "/showgolf_form/static/css/main.41cb244d.css.map",
+    "main.c687e45e.js.map": "/showgolf_form/static/js/main.c687e45e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41cb244d.css",
+    "static/js/main.c687e45e.js"
+  ]
+}
